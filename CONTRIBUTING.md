@@ -2,7 +2,7 @@
 
 ## Installation
 
-* `git clone <repository-url>`
+* `git clone https://github.com/movableink/ember-cli-qrcode`
 * `cd ember-cli-qrcode`
 * `npm install`
 
