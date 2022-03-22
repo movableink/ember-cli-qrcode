@@ -1,5 +1,5 @@
-import { test, module } from 'ember-qunit';
-import { glog, gexp } from 'ember-cli-qrcode/system/math';
+import { test, module } from "ember-qunit";
+import { glog, gexp } from "@timeforinnovation/ember-cli-qrcode/system/math";
 
 module("math");
 
@@ -10,9 +10,13 @@ test("glog", (assert) => {
   assert.equal(glog(20), 52);
   assert.equal(glog(254), 88);
 
-  assert.throws(function() {
-    assert.equal(glog(-1), 0);
-  }, /glog/, 'must be greater than 1');
+  assert.throws(
+    function () {
+      assert.equal(glog(-1), 0);
+    },
+    /glog/,
+    "must be greater than 1"
+  );
 });
 
 test("gexp", (assert) => {
