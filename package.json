@@ -1,11 +1,11 @@
 {
-  "name": "ember-cli-qrcode",
+  "name": "@timeforinnovation/ember-cli-qrcode",
   "version": "1.0.0",
   "description": "QR Code component for Ember applications",
   "keywords": [
     "ember-addon"
   ],
-  "repository": "https://github.com/movableink/ember-cli-qrcode",
+  "repository": "https://github.com/law-rence/ember-cli-qrcode.git",
   "license": "MIT",
   "author": "Michael Nutt <michael@movableink.com>",
   "directories": {
