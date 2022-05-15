@@ -1,5 +1,5 @@
 import { test, module } from "ember-qunit";
-import BitBuffer from "@timeforinnovation/ember-cli-qrcode/system/bit-buffer";
+import BitBuffer from "ember-cli-qrcode/system/bit-buffer";
 
 module("bit-buffer");
 

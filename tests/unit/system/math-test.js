@@ -1,5 +1,5 @@
 import { test, module } from "ember-qunit";
-import { glog, gexp } from "@timeforinnovation/ember-cli-qrcode/system/math";
+import { glog, gexp } from "ember-cli-qrcode/system/math";
 
 module("math");
 

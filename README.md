@@ -1,11 +1,11 @@
-# @timeforinnovation/ember-cli-qrcode
+# ember-cli-qrcode
 
 Embed QR codes in your Ember application.
 
 ## Installation
 
 ```
-ember install @timeforinnovation/ember-cli-qrcode
+ember install ember-cli-qrcode
 ```
 
 ## Usage

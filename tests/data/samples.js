@@ -670,7 +670,7 @@ export default [
     ],
   ],
   [
-    "https://github.com/movableink/@timeforinnovation/ember-cli-qrcode/tree/master/test/data/samples.js",
+    "https://github.com/movableink/ember-cli-qrcode/tree/master/test/data/samples.js",
     [
       [0, 0],
       [0, 1],

@@ -1,5 +1,5 @@
 import { test, module } from "ember-qunit";
-import RSBlock from "@timeforinnovation/ember-cli-qrcode/system/rs-block";
+import RSBlock from "ember-cli-qrcode/system/rs-block";
 
 module("rs-block");
 

@@ -1,5 +1,5 @@
 import { test, module } from "ember-qunit";
-import Polynomial from "@timeforinnovation/ember-cli-qrcode/system/polynomial";
+import Polynomial from "ember-cli-qrcode/system/polynomial";
 
 module("polynomial");
 

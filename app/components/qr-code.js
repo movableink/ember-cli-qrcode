@@ -1,1 +1,1 @@
-export { default } from "@timeforinnovation/ember-cli-qrcode/components/qr-code";
+export { default } from "ember-cli-qrcode/components/qr-code";

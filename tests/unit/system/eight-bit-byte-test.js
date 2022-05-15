@@ -1,5 +1,5 @@
 import { test, module } from "ember-qunit";
-import EightBitByte from "@timeforinnovation/ember-cli-qrcode/system/8bit-byte";
+import EightBitByte from "ember-cli-qrcode/system/8bit-byte";
 
 module("8bit-byte");
 

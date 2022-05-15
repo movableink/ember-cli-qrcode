@@ -2,8 +2,8 @@
 
 ## Installation
 
-- `git clone https://github.com/movableink/@timeforinnovation/ember-cli-qrcode`
-- `cd @timeforinnovation/ember-cli-qrcode`
+- `git clone https://github.com/movableink/ember-cli-qrcode`
+- `cd ember-cli-qrcode`
 - `npm install`
 
 ## Linting

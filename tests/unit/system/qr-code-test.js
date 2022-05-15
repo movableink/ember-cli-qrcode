@@ -1,5 +1,5 @@
 import { test, module } from "ember-qunit";
-import qrCode from "@timeforinnovation/ember-cli-qrcode/system/qr-code";
+import qrCode from "ember-cli-qrcode/system/qr-code";
 
 module("qr-code");
 
