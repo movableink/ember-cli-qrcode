@@ -16,9 +16,9 @@ ember install ember-cli-qrcode
 
 ## Acknowledgements
 
-* Originally based on _QRCode for JavaScript_, Copyright (c) 2009 Kazuhiko Arase
-* Full spec support added and dependencies removed by `davidshimjs`: https://github.com/davidshimjs/qrcodejs
-* The word "QR Code" is registered trademark of DENSO WAVE INCORPORATED
+- Originally based on _QRCode for JavaScript_, Copyright (c) 2009 Kazuhiko Arase
+- Full spec support added and dependencies removed by `davidshimjs`: https://github.com/davidshimjs/qrcodejs
+- The word "QR Code" is registered trademark of DENSO WAVE INCORPORATED
 
 ## License
 
