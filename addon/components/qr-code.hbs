@@ -3,6 +3,7 @@
   height={{this.size}}
   viewBox={{this.viewBox}}
   xmlns:xlink="http://www.w3.org/1999/xlink"
+  ...attributes
 >
   <rect fill={{this.lightColor}} width="100%" height="100%"></rect>
   <rect
@@ -13,17 +14,10 @@
   ></rect>
 
   {{#each this.rows as |cols y|}}
-
     {{#each cols as |visible x|}}
-
       {{#if visible}}
-
         <use x={{x}} y={{y}} xlink:href="#template-{{this.elementId}}"></use>
-
       {{/if}}
-
     {{/each}}
-
   {{/each}}
-
 </svg>

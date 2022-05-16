@@ -11,7 +11,7 @@ ember install ember-cli-qrcode
 ## Usage
 
 ```handlebars
-<QrCode @text="http://example.com" @size={{300}} @darkColor="#009966" />
+<QrCode @text="http://example.com" style="width: 300px;" @darkColor="#009966" />
 ```
 
 ## Acknowledgements
