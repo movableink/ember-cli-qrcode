@@ -6,14 +6,14 @@ export const MaskPattern = {
   PATTERN100: 4,
   PATTERN101: 5,
   PATTERN110: 6,
-  PATTERN111: 7
+  PATTERN111: 7,
 };
 
 export const Mode = {
   MODE_NUMBER: 1 << 0,
   MODE_ALPHA_NUM: 1 << 1,
   MODE_8BIT_BYTE: 1 << 2,
-  MODE_KANJI: 1 << 3
+  MODE_KANJI: 1 << 3,
 };
 
 export const ErrorCorrectLevel = { L: 1, M: 0, Q: 3, H: 2 };
@@ -58,5 +58,5 @@ export const CodeLimitLength = [
   [2563, 1989, 1423, 1093],
   [2699, 2099, 1499, 1139],
   [2809, 2213, 1579, 1219],
-  [2953, 2331, 1663, 1273]
+  [2953, 2331, 1663, 1273],
 ];

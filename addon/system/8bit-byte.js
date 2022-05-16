@@ -1,4 +1,4 @@
-import { Mode } from './constants';
+import { Mode } from "./constants";
 
 export default class EightBitByte {
   constructor(data) {

@@ -1,26 +1,32 @@
-import Component from "@ember/component";
+import Component from "@glimmer/component";
+import { tracked } from "@glimmer/tracking";
 import { htmlSafe } from "@ember/template";
-import { computed } from "@ember/object";
 import qrCode from "../system/qr-code";
-import layout from "../templates/components/qr-code";
 
-export default Component.extend({
-  layout,
+export default class QRCode extends Component {
+  @tracked text;
 
-  size: htmlSafe("100%"),
-  darkColor: "#000000",
-  lightColor: "#FFFFFF",
+  constructor() {
+    super(...arguments);
+    this.size = this.args.size || htmlSafe("100%");
+    this.darkColor = this.args.darkColor || "#000000";
+    this.lightColor = this.args.lightColor || "#FFFFFF";
+  }
 
-  code: computed("text", function () {
-    return qrCode(this.text);
-  }),
+  get code() {
+    if (!this.args.text) {
+      throw new Error("Must pass @text argument");
+    }
 
-  viewBox: computed("code", function () {
+    return qrCode(this.args.text);
+  }
+
+  get viewBox() {
     const nCount = this.code.getModuleCount();
     return htmlSafe(`0 0 ${nCount} ${nCount}`);
-  }),
+  }
 
-  rows: computed("code", function () {
+  get rows() {
     const { code } = this;
     const nCount = code.getModuleCount();
 
@@ -29,5 +35,5 @@ export default Component.extend({
         return code.isDark(row, col);
       });
     });
-  }),
-});
+  }
+}

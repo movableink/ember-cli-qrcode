@@ -1,4 +1,4 @@
-import EightBitByte from './8bit-byte';
+import EightBitByte from "./8bit-byte";
 import {
   getBCHTypeInfo,
   getBCHTypeNumber,
@@ -6,11 +6,11 @@ import {
   getLengthInBits,
   getLostPoint,
   getMask,
-  getPatternPosition
-} from './util';
-import RSBlock from './rs-block';
-import BitBuffer from './bit-buffer';
-import Polynomial from './polynomial';
+  getPatternPosition,
+} from "./util";
+import RSBlock from "./rs-block";
+import BitBuffer from "./bit-buffer";
+import Polynomial from "./polynomial";
 
 const PAD0 = 0xec;
 const PAD1 = 0x11;
@@ -32,8 +32,13 @@ class CodeModel {
   }
 
   isDark(row, col) {
-    if (row < 0 || this.moduleCount <= row || col < 0 || this.moduleCount <= col) {
-      throw new Error(row + ',' + col);
+    if (
+      row < 0 ||
+      this.moduleCount <= row ||
+      col < 0 ||
+      this.moduleCount <= col
+    ) {
+      throw new Error(row + "," + col);
     }
     return this.modules[row][col];
   }
@@ -261,7 +266,11 @@ class CodeModel {
 
     if (buffer.getLengthInBits() > totalDataCount * 8) {
       throw new Error(
-        'code length overflow. (' + buffer.getLengthInBits() + '>' + totalDataCount * 8 + ')'
+        "code length overflow. (" +
+          buffer.getLengthInBits() +
+          ">" +
+          totalDataCount * 8 +
+          ")"
       );
     }
 

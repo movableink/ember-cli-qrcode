@@ -1,4 +1,4 @@
-import { ErrorCorrectLevel } from './constants';
+import { ErrorCorrectLevel } from "./constants";
 
 const RS_BLOCK_TABLE = [
   [1, 26, 19],
@@ -160,7 +160,7 @@ const RS_BLOCK_TABLE = [
   [19, 148, 118, 6, 149, 119],
   [18, 75, 47, 31, 76, 48],
   [34, 54, 24, 34, 55, 25],
-  [20, 45, 15, 61, 46, 16]
+  [20, 45, 15, 61, 46, 16],
 ];
 
 export default class RSBlock {

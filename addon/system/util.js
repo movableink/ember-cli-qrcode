@@ -1,6 +1,6 @@
-import { MaskPattern, Mode } from './constants';
-import { gexp } from './math';
-import Polynomial from './polynomial';
+import { MaskPattern, Mode } from "./constants";
+import { gexp } from "./math";
+import Polynomial from "./polynomial";
 
 const PATTERN_POSITION_TABLE = [
   [],
@@ -42,11 +42,20 @@ const PATTERN_POSITION_TABLE = [
   [6, 28, 54, 80, 106, 132, 158],
   [6, 32, 58, 84, 110, 136, 162],
   [6, 26, 54, 82, 110, 138, 166],
-  [6, 30, 58, 86, 114, 142, 170]
+  [6, 30, 58, 86, 114, 142, 170],
 ];
 
-const G15 = (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0);
-const G18 = (1 << 12) | (1 << 11) | (1 << 10) | (1 << 9) | (1 << 8) | (1 << 5) | (1 << 2) | (1 << 0);
+const G15 =
+  (1 << 10) | (1 << 8) | (1 << 5) | (1 << 4) | (1 << 2) | (1 << 1) | (1 << 0);
+const G18 =
+  (1 << 12) |
+  (1 << 11) |
+  (1 << 10) |
+  (1 << 9) |
+  (1 << 8) |
+  (1 << 5) |
+  (1 << 2) |
+  (1 << 0);
 const G15_MASK = (1 << 14) | (1 << 12) | (1 << 10) | (1 << 4) | (1 << 1);
 
 export function getBCHTypeInfo(data) {
@@ -80,24 +89,24 @@ export function getPatternPosition(typeNumber) {
 
 export function getMask(maskPattern, i, j) {
   switch (maskPattern) {
-  case MaskPattern.PATTERN000:
-    return (i + j) % 2 == 0;
-  case MaskPattern.PATTERN001:
-    return i % 2 == 0;
-  case MaskPattern.PATTERN010:
-    return j % 3 == 0;
-  case MaskPattern.PATTERN011:
-    return (i + j) % 3 == 0;
-  case MaskPattern.PATTERN100:
-    return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 == 0;
-  case MaskPattern.PATTERN101:
-    return ((i * j) % 2) + ((i * j) % 3) == 0;
-  case MaskPattern.PATTERN110:
-    return (((i * j) % 2) + ((i * j) % 3)) % 2 == 0;
-  case MaskPattern.PATTERN111:
-    return (((i * j) % 3) + ((i + j) % 2)) % 2 == 0;
-  default:
-    throw new Error('bad maskPattern:' + maskPattern);
+    case MaskPattern.PATTERN000:
+      return (i + j) % 2 == 0;
+    case MaskPattern.PATTERN001:
+      return i % 2 == 0;
+    case MaskPattern.PATTERN010:
+      return j % 3 == 0;
+    case MaskPattern.PATTERN011:
+      return (i + j) % 3 == 0;
+    case MaskPattern.PATTERN100:
+      return (Math.floor(i / 2) + Math.floor(j / 3)) % 2 == 0;
+    case MaskPattern.PATTERN101:
+      return ((i * j) % 2) + ((i * j) % 3) == 0;
+    case MaskPattern.PATTERN110:
+      return (((i * j) % 2) + ((i * j) % 3)) % 2 == 0;
+    case MaskPattern.PATTERN111:
+      return (((i * j) % 3) + ((i + j) % 2)) % 2 == 0;
+    default:
+      throw new Error("bad maskPattern:" + maskPattern);
   }
 }
 
@@ -112,45 +121,45 @@ export function getErrorCorrectPolynomial(errorCorrectLength) {
 export function getLengthInBits(mode, type) {
   if (1 <= type && type < 10) {
     switch (mode) {
-    case Mode.MODE_NUMBER:
-      return 10;
-    case Mode.MODE_ALPHA_NUM:
-      return 9;
-    case Mode.MODE_8BIT_BYTE:
-      return 8;
-    case Mode.MODE_KANJI:
-      return 8;
-    default:
-      throw new Error('mode:' + mode);
+      case Mode.MODE_NUMBER:
+        return 10;
+      case Mode.MODE_ALPHA_NUM:
+        return 9;
+      case Mode.MODE_8BIT_BYTE:
+        return 8;
+      case Mode.MODE_KANJI:
+        return 8;
+      default:
+        throw new Error("mode:" + mode);
     }
   } else if (type < 27) {
     switch (mode) {
-    case Mode.MODE_NUMBER:
-      return 12;
-    case Mode.MODE_ALPHA_NUM:
-      return 11;
-    case Mode.MODE_8BIT_BYTE:
-      return 16;
-    case Mode.MODE_KANJI:
-      return 10;
-    default:
-      throw new Error('mode:' + mode);
+      case Mode.MODE_NUMBER:
+        return 12;
+      case Mode.MODE_ALPHA_NUM:
+        return 11;
+      case Mode.MODE_8BIT_BYTE:
+        return 16;
+      case Mode.MODE_KANJI:
+        return 10;
+      default:
+        throw new Error("mode:" + mode);
     }
   } else if (type < 41) {
     switch (mode) {
-    case Mode.MODE_NUMBER:
-      return 14;
-    case Mode.MODE_ALPHA_NUM:
-      return 13;
-    case Mode.MODE_8BIT_BYTE:
-      return 16;
-    case Mode.MODE_KANJI:
-      return 12;
-    default:
-      throw new Error('mode:' + mode);
+      case Mode.MODE_NUMBER:
+        return 14;
+      case Mode.MODE_ALPHA_NUM:
+        return 13;
+      case Mode.MODE_8BIT_BYTE:
+        return 16;
+      case Mode.MODE_KANJI:
+        return 12;
+      default:
+        throw new Error("mode:" + mode);
     }
   } else {
-    throw new Error('type:' + type);
+    throw new Error("type:" + type);
   }
 }
 
@@ -208,12 +217,12 @@ export function getLostPoint(qrCode) {
     for (let col = 0; col < moduleCount - 6; col++) {
       if (
         qrCode.isDark(row, col) &&
-          !qrCode.isDark(row, col + 1) &&
-          qrCode.isDark(row, col + 2) &&
-          qrCode.isDark(row, col + 3) &&
-          qrCode.isDark(row, col + 4) &&
-          !qrCode.isDark(row, col + 5) &&
-          qrCode.isDark(row, col + 6)
+        !qrCode.isDark(row, col + 1) &&
+        qrCode.isDark(row, col + 2) &&
+        qrCode.isDark(row, col + 3) &&
+        qrCode.isDark(row, col + 4) &&
+        !qrCode.isDark(row, col + 5) &&
+        qrCode.isDark(row, col + 6)
       ) {
         lostPoint += 40;
       }
@@ -224,12 +233,12 @@ export function getLostPoint(qrCode) {
     for (let row = 0; row < moduleCount - 6; row++) {
       if (
         qrCode.isDark(row, col) &&
-          !qrCode.isDark(row + 1, col) &&
-          qrCode.isDark(row + 2, col) &&
-          qrCode.isDark(row + 3, col) &&
-          qrCode.isDark(row + 4, col) &&
-          !qrCode.isDark(row + 5, col) &&
-          qrCode.isDark(row + 6, col)
+        !qrCode.isDark(row + 1, col) &&
+        qrCode.isDark(row + 2, col) &&
+        qrCode.isDark(row + 3, col) &&
+        qrCode.isDark(row + 4, col) &&
+        !qrCode.isDark(row + 5, col) &&
+        qrCode.isDark(row + 6, col)
       ) {
         lostPoint += 40;
       }
@@ -246,7 +255,8 @@ export function getLostPoint(qrCode) {
     }
   }
 
-  const ratio = Math.abs((100 * darkCount) / moduleCount / moduleCount - 50) / 5;
+  const ratio =
+    Math.abs((100 * darkCount) / moduleCount / moduleCount - 50) / 5;
   lostPoint += ratio * 10;
 
   return lostPoint;

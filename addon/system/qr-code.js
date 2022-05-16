@@ -23,8 +23,8 @@
  *
  **/
 
-import { CodeLimitLength, ErrorCorrectLevel } from './constants';
-import CodeModel from './model';
+import { CodeLimitLength, ErrorCorrectLevel } from "./constants";
+import CodeModel from "./model";
 
 /**
  * Create a QR Code model
@@ -40,8 +40,9 @@ import CodeModel from './model';
  * @param {String} correctLevelString
  * @return {CodeModel} code
  */
-export default function makeCode(text, correctLevelString='L') {
-  const correctLevel = ErrorCorrectLevel[correctLevelString] || ErrorCorrectLevel.L;
+export default function makeCode(text, correctLevelString = "L") {
+  const correctLevel =
+    ErrorCorrectLevel[correctLevelString] || ErrorCorrectLevel.L;
   const code = new CodeModel(getTypeNumber(text, correctLevel), correctLevel);
   code.addData(text);
   code.make();
@@ -103,6 +104,6 @@ function getTypeNumber(sText, nCorrectLevel) {
 function getUTF8Length(sText) {
   const replacedText = encodeURI(sText)
     .toString()
-    .replace(/%[0-9a-fA-F]{2}/g, 'a');
+    .replace(/%[0-9a-fA-F]{2}/g, "a");
   return replacedText.length + (replacedText.length != sText ? 3 : 0);
 }

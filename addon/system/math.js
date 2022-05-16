@@ -7,10 +7,7 @@ for (let i = 0; i < 8; i++) {
 
 for (let i = 8; i < 256; i++) {
   EXP_TABLE[i] =
-    EXP_TABLE[i - 4] ^
-    EXP_TABLE[i - 5] ^
-    EXP_TABLE[i - 6] ^
-    EXP_TABLE[i - 8];
+    EXP_TABLE[i - 4] ^ EXP_TABLE[i - 5] ^ EXP_TABLE[i - 6] ^ EXP_TABLE[i - 8];
 }
 
 for (let i = 0; i < 255; i++) {
@@ -19,7 +16,7 @@ for (let i = 0; i < 255; i++) {
 
 export function glog(n) {
   if (n < 1) {
-    throw new Error('glog(' + n + ')');
+    throw new Error("glog(" + n + ")");
   }
 
   return LOG_TABLE[n];

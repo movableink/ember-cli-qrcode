@@ -1,18 +1,18 @@
-import { test, module } from "ember-qunit";
+import { test, module } from "qunit";
 import RSBlock from "ember-cli-qrcode/system/rs-block";
 
 module("rs-block");
 
-test("getRSBlocks", (assert) => {
+test("getRSBlocks", function (assert) {
   const blocks = RSBlock.getRSBlocks(3, 2);
 
-  assert.equal(blocks.length, 2, "returns 2 blocks");
-  assert.equal(blocks[0].dataCount, 13);
-  assert.equal(blocks[0].totalCount, 35);
-  assert.equal(blocks[0].dataCount, 13);
+  assert.strictEqual(blocks.length, 2, "returns 2 blocks");
+  assert.strictEqual(blocks[0].dataCount, 13);
+  assert.strictEqual(blocks[0].totalCount, 35);
+  assert.strictEqual(blocks[0].dataCount, 13);
 });
 
-test("getRSBlocks with bad typeNumber", (assert) => {
+test("getRSBlocks with bad typeNumber", function (assert) {
   assert.throws(
     function () {
       RSBlock.getRSBlocks(1000, 2);
@@ -22,7 +22,7 @@ test("getRSBlocks with bad typeNumber", (assert) => {
   );
 });
 
-test("getRsBlockTable", (assert) => {
+test("getRsBlockTable", function (assert) {
   const table = RSBlock.getRsBlockTable(3, 2);
   assert.deepEqual(table, [2, 35, 13], "returns the table");
 });

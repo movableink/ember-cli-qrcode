@@ -1,4 +1,6 @@
-# See https://help.github.com/ignore-files/ for more about ignoring files.
+# unconventional js
+/blueprints/*/files/
+/vendor/
 
 # compiled output
 /dist/
@@ -9,20 +11,15 @@
 /node_modules/
 
 # misc
-/.sass-cache
-/connect.lock
 /coverage/
-/libpeerconnection.log
-/npm-debug.log*
-/testem.log
-/yarn-error.log
-/.eslintcache
+!.*
+.eslintcache
+.lint-todo/
 
 # ember-try
 /.node_modules.ember-try/
 /bower.json.ember-try
+/npm-shrinkwrap.json.ember-try
 /package.json.ember-try
 /package-lock.json.ember-try
-
-/package-lock.json
-/yarn.lock
+/yarn.lock.ember-try

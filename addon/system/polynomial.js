@@ -1,9 +1,9 @@
-import { glog, gexp } from './math';
+import { glog, gexp } from "./math";
 
 export default class Polynomial {
   constructor(num, shift) {
     if (num.length == undefined) {
-      throw new Error(num.length + '/' + shift);
+      throw new Error(num.length + "/" + shift);
     }
 
     let offset = 0;
